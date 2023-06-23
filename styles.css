@@ -1,0 +1,43 @@
+#gameInstructions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.playerControls {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerControls h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.controlDiagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.controlDiagram img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.controlDiagram span {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}

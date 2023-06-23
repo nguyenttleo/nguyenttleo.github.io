@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Hammersmith One', bold;
+            font-size: 36px;
+        }
+
+        .project {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+    <script>
+        window.addEventListener('scroll', function () {
+            var projects = document.getElementsByClassName('project');
+            var windowHeight = window.innerHeight;
+            var windowCenter = windowHeight / 2;
+            var visibleArea = windowHeight * 1; // Adjust the visible area as needed
+
+            for (var i = 0; i < projects.length; i++) {
+                var project = projects[i];
+                var projectTop = project.getBoundingClientRect().top;
+                var projectBottom = project.getBoundingClientRect().bottom;
+                var projectCenter = (projectTop + projectBottom) / 2;
+
+                if (projectTop < windowCenter + (visibleArea / 2) && projectBottom > windowCenter - (visibleArea / 2)) {
+                    var scrollPosition = windowCenter - projectCenter;
+                    var opacity = 1 - ((Math.abs(scrollPosition) / (visibleArea / 2)) * .75);
+                    project.style.opacity = opacity;
+                } else {
+                    project.style.opacity = 0;
+                }
+            }
+        });
+    </script>
+</head>
+
+<body style="height: 600%; display: flex; flex-direction: column">
+    <div class="project" style="margin-bottom: 50px; margin-top: 1000px">
+        <img src="project1.jpg" alt="Project 1" style="width: 100%;">
+        <h2>Project 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper dui vel ullamcorper scelerisque.
+            Suspendisse sed ex et est tincidunt rutrum id sed lorem. Nunc tristique lectus id nunc sagittis, nec dapibus
+            arcu lobortis.</p>
+    </div>
+
+    <div class="project" style="margin-bottom: 50px;">
+        <img src="project2.jpg" alt="Project 2" style="width: 100%;">
+        <h2>Project 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper dui vel ullamcorper scelerisque.
+            Suspendisse sed ex et est tincidunt rutrum id sed lorem. Nunc tristique lectus id nunc sagittis, nec dapibus
+            arcu lobortis.</p>
+    </div>
+
+    <div class="project" style="margin-bottom: 50px;">
+        <img src="project3.jpg" alt="Project 3" style="width: 100%;">
+        <h2>Project 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper dui vel ullamcorper scelerisque.
+            Suspendisse sed ex et est tincidunt rutrum id sed lorem. Nunc tristique lectus id nunc sagittis, nec dapibus
+            arcu lobortis.</p>
+    </div>
+
+    <div class="project" style="margin-bottom: 50px;">
+        <img src="project4.jpg" alt="Project 4" style="width: 100%;">
+        <h2>Project 4</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper dui vel ullamcorper scelerisque.
+            Suspendisse sed ex et est tincidunt rutrum id sed lorem. Nunc tristique lectus id nunc sagittis, nec dapibus
+            arcu lobortis.</p>
+    </div>
+
+    <div class="project" style="margin-bottom: 50px;">
+        <img src="project5.jpg" alt="Project 5" style="width: 100%;">
+        <h2>Project 5</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper dui vel ullamcorper scelerisque.
+            Suspendisse sed ex et est tincidunt rutrum id sed lorem. Nunc tristique lectus id nunc sagittis, nec dapibus
+            arcu lobortis.</p>
+    </div>
+    <div id="gameInstructions">
+        <h2>HTML Wizard Fighting Game</h2>
+
+        <div class="playerControls player1Controls">
+            <h3>Player 1 Controls</h3>
+            <div class="controlDiagram">
+                <img src="controls/player1_move_left.png" alt="Player 1 Move Left" />
+                <span>Press 'A' to move left</span>
+            </div>
+            <div class="controlDiagram">
+                <img src="controls/player1_move_right.png" alt="Player 1 Move Right" />
+                <span>Press 'D' to move right</span>
+            </div>
+            <div class="controlDiagram">
+                <img src="controls/player1_jump.png" alt="Player 1 Jump" />
+                <span>Press 'W' to jump</span>
+            </div>
+            <div class="controlDiagram">
+                <img src="controls/player1_attack.png" alt="Player 1 Attack" />
+                <span>Press 'S' to attack</span>
+            </div>
+        </div>
+
+        <div class="playerControls player2Controls">
+            <h3>Player 2 Controls</h3>
+            <div class="controlDiagram">
+                <img src="controls/player2_move_left.png" alt="Player 2 Move Left" />
+                <span>Press &#8592; to move left</span>
+            </div>
+            <div class="controlDiagram">
+                <img src="controls/player2_move_right.png" alt="Player 2 Move Right" />
+                <span>Press &#8594; to move right</span>
+            </div>
+            <div class="controlDiagram">
+                <img src="controls/player2_jump.png" alt="Player 2 Jump" />
+                <span>Press &#8593; to jump</span>
+            </div>
+            <div class="controlDiagram">
+                <img src="controls/player2_attack.png" alt="Player 2 Attack" />
+                <span>Press &#8595; to attack</span>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative; display: inline-block; align-self: flex-end; margin: 0 auto; margin-bottom: 1%">
+        <div style="
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+      ">
+            <div style="
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          border-top: 4px solid white;
+          border-left: 4px solid white;
+          border-bottom: 4px solid white;
+          border-bottom-left-radius: 10px; 
+          border-top-left-radius: 10px; 
+        ">
+                <div style="background-color: red; height: 30px; width: 100%; border-bottom-left-radius: 7px; 
+            border-top-left-radius: 7px;"></div>
+                <div id="playerHealth" style="
+            position: absolute;
+            background: greenyellow;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            border-bottom-left-radius: 5px; 
+            border-top-left-radius: 5px; 
+          "></div>
+            </div>
+
+            <div id="timer" style="
+          background-color: black;
+          width: 100px;
+          height: 50px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border: 4px solid white;
+          border-radius: 10px;
+        ">
+
+            </div>
+            <div style="
+          position: relative;
+          width: 100%;
+          border-top: 4px solid white;
+          border-bottom: 4px solid white;
+          border-right: 4px solid white;
+          border-bottom-right-radius: 10px; 
+          border-top-right-radius: 10px; 
+        ">
+                <div style="background-color: red; height: 30px; border-bottom-right-radius: 7px; 
+            border-top-right-radius: 7px;"></div>
+                <div id="enemyHealth" style="
+            position: absolute;
+            background: greenyellow;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-bottom-right-radius: 5px; 
+            border-top-right-radius: 5px;
+          "></div>
+            </div>
+            <div></div>
+        </div>
+        <div id="displayText" style="
+        position: absolute;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        font-size: 120px;
+        text-shadow: 10px 10px 5px black
+      ">
+
+        </div>
+        <canvas id="myCanvas" style="border-radius: 20px">
+            <img src="Assets/layers/far-buildings.png" alt="" id="back" style="width: 100%">
+            <img src="Assets/layers/back-buildings.png" alt="" id="middle" style="width: 100%">
+            <img src="Assets/layers/foreground.png" alt="" id="front">
+        </canvas>
+    </div>
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
